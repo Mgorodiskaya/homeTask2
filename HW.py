@@ -1,12 +1,14 @@
 def func_1(x):
-    a = ()
-    if len(x) == 8:
-        if x[:1].isalpha() and x[2:6].isdigit():
-            a = x[:6]
-        else:
-            print("Not correct format")
-    else:
+    a = {}
+    if len(x) != 8:
         a = "False"
+    else:
+        if x[:1].isalpha() and x[2:6].isdigit() and x[7:8].isalpha():
+            a["First letters"] = x[:2]
+            a["Digits"] = x[2:6]
+            a["Last letters"] = x[6:8]
+        else:
+            a = "not correct format"
     return a
 
 
